@@ -1,0 +1,85 @@
+PODS:
+  - Alamofire (5.6.2)
+  - AttributedStringBuilder (1.2.0)
+  - Differentiator (4.0.1)
+  - DynamicBlurView (4.1.0)
+  - DZNEmptyDataSet (1.8.1)
+  - HorizontalProgressBar (1.0.5)
+  - IQKeyboardManagerSwift (6.5.10)
+  - Kingfisher (7.3.2)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
+  - Realm (10.28.5):
+    - Realm/Headers (= 10.28.5)
+  - Realm/Headers (10.28.5)
+  - RealmSwift (10.28.5):
+    - Realm (= 10.28.5)
+  - RxAlamofire (5.7.1):
+    - RxAlamofire/Core (= 5.7.1)
+  - RxAlamofire/Core (5.7.1):
+    - Alamofire (~> 5.4)
+    - RxSwift (~> 5.1)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.1.3):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+
+DEPENDENCIES:
+  - AttributedStringBuilder
+  - DZNEmptyDataSet
+  - HorizontalProgressBar
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - PopupDialog
+  - RealmSwift (~> 10)
+  - RxAlamofire (~> 5)
+  - RxCocoa (= 5.1.1)
+  - RxDataSources (~> 4.0)
+  - RxSwift (= 5.1.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AttributedStringBuilder
+    - Differentiator
+    - DynamicBlurView
+    - DZNEmptyDataSet
+    - HorizontalProgressBar
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - PopupDialog
+    - Realm
+    - RealmSwift
+    - RxAlamofire
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  AttributedStringBuilder: 3cee4ae28b8fc6eba136242f89b0ea697a3b9d55
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  HorizontalProgressBar: f0e3d36051656651d1430d2cf5e0146fc4895f15
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
+  Realm: eb7f6a7a8395906822e6fab71eb8496d6d52b318
+  RealmSwift: 6b54904d4a236de143f3411a757641fd74e9cb3d
+  RxAlamofire: 8e144c62dcc01d68dcb366bfc542eb6dd46bab78
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+
+PODFILE CHECKSUM: 02e0e00c7f728cff2125a30900b7aa3a88e8869e
+
+COCOAPODS: 1.11.3

@@ -18,5 +18,14 @@ final class SignUpController: BaseViewController<SignUpView, IAuthViewModel> {
         super.configureViews()
         kview.viewModel = viewModel
     }
+    
+    override func setChildViewControllerObservers() {
+        super.setChildViewControllerObservers()
+        viewModel.validationMessages.bind { validations in
+            if !validations.isEmpty {
+                self.kview.updateValidationMessages(validations)
+            }
+        }.disposed(by: disposeBag)
+    }
 
 }

@@ -31,66 +31,7 @@ extension Realm {
         }
     }
     
-    func updateItems<T: Object>(items: [T]) -> Observable<Void> {
-        return Observable<Void>.create { observer in
-            
-            do {
-                
-                try self.write {
-                    self.add(items, update: .modified)
-                }
-                
-                observer.onNext(())
-                
-            } catch {
-                observer.onError(error)
-            }
-            
-            return Disposables.create()
-        }
-    }
-    
-    func deleteItems<T: Object>(items: [T]) -> Observable<Void> {
-        
-        return Observable<Void>.create { observer in
-            
-            do {
-                
-                try self.write {
-                    self.delete(items)
-                }
-                
-                observer.onNext(())
-                
-            } catch {
-                observer.onError(error)
-            }
-            
-            return Disposables.create()
-        }
-    }
-    
-    func deleteAllItems<T: Object>(items: Results<T>) -> Observable<Void> {
-        
-        return Observable<Void>.create { observer in
-            
-            do {
-                
-                try self.write {
-                    self.delete(items)
-                }
-                
-                observer.onNext(())
-                
-            } catch {
-                observer.onError(error)
-            }
-            
-            return Disposables.create()
-        }
-    }
-    
-    func deleteAllItems<T: Object>(for type: T.Type) -> Observable<Void> {
+    func deleteItems<T: Object>(for type: T.Type) -> Observable<Void> {
         
         return Observable<Void>.create { observer in
             
@@ -105,16 +46,6 @@ extension Realm {
             } catch {
                 observer.onError(error)
             }
-            
-            return Disposables.create()
-        }
-    }
-    
-    func getSingleElement<T: Object>(primaryKeyValue: String) -> Observable<T?> {
-        
-        return Observable<T?>.create { observer in
-            
-            observer.onNext(self.object(ofType: T.self, forPrimaryKey: primaryKeyValue))
             
             return Disposables.create()
         }

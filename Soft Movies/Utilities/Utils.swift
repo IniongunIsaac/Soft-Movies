@@ -56,3 +56,9 @@ func _animate(duration: TimeInterval = 0.5, completion: (() -> Void)? = nil) {
         completion?()
     })
 }
+
+func runAfter(_ delay: Double = 0.5, action: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) {
+        action()
+    }
+}

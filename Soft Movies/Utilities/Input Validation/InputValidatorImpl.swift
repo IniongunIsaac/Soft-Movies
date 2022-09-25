@@ -49,7 +49,7 @@ final class InputValidatorImpl: IInputValidator {
         if confirmPassword.isEmpty {
             return ValidationMessage(message: "Cannot be empty", validationType: .confirmPassword)
         } else if confirmPassword.count < 6 {
-            return ValidationMessage(message: "Minimum 8 characters", validationType: .confirmPassword)
+            return ValidationMessage(message: "Minimum 6 characters", validationType: .confirmPassword)
         } else if password != confirmPassword {
             return ValidationMessage(message: "Password mismatch", validationType: .confirmPassword)
         }

@@ -10,6 +10,8 @@ import RxSwift
 
 protocol IAuthViewModel {
     
+    var validationMessages: PublishSubject<[ValidationMessage]> { get set }
+    
     var coordinatorDelegate: AuthCoordinatorDelegate? { get set }
     
     func navigate(to route: AuthNavRoute)

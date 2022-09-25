@@ -40,6 +40,10 @@ final class AuthCoordinator: Coordinator {
         }
     }
     
+    private func startMoviesCoordinator() {
+        
+    }
+    
 }
 
 extension AuthCoordinator: AuthCoordinatorDelegate {
@@ -53,6 +57,8 @@ extension AuthCoordinator: AuthCoordinatorDelegate {
             showLogin()
         case .signUp:
             showSignUp()
+        case .movies:
+            startMoviesCoordinator()
         }
     }
 }

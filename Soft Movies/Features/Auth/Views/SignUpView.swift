@@ -15,8 +15,8 @@ final class SignUpView: BaseScrollView {
     private let titleLabel = UILabel(text: "Create Account", font: .avenirExtraBold(25), alignment: .left)
     private let fullNameTextField = AppTextField(title: "Fullname")
     private let emailTextField = AppTextField(title: "Email Address", keyboardType: .emailAddress)
-    private let passwordTextField = AppTextField(title: "Password", isPassword: true, keyboardType: .numberPad)
-    private let confirmPasswordTextField = AppTextField(title: "Confirm Password", isPassword: true, keyboardType: .numberPad)
+    private let passwordTextField = AppTextField(title: "Password", isPassword: true, keyboardType: .numberPad, maxLength: 6)
+    private let confirmPasswordTextField = AppTextField(title: "Confirm Password", isPassword: true, keyboardType: .numberPad, maxLength: 6)
     private lazy var signUpButton = AppButton(title: "Sign Up", tapAction: didTapSignUpButton)
     private lazy var signInButton = AppButton(title: "Already have an account? Sign In", backgroundColor: .clear, textColor: .primaryTextColor, tapAction: didTapSignInButton)
     private lazy var contentStackView = VStackView(subviews: [titleLabel,
@@ -50,6 +50,21 @@ final class SignUpView: BaseScrollView {
                          email: emailTextField.text,
                          password: passwordTextField.text,
                          confirmPassword: confirmPasswordTextField.text)
+    }
+    
+    func updateValidationMessages(_ messages: [ValidationMessage]) {
+        messages.forEach {
+            switch $0.validationType {
+            case .email:
+                emailTextField.updateValidationStatus(message: $0)
+            case .password:
+                passwordTextField.updateValidationStatus(message: $0)
+            case .confirmPassword:
+                confirmPasswordTextField.updateValidationStatus(message: $0)
+            case .name:
+                fullNameTextField.updateValidationStatus(message: $0)
+            }
+        }
     }
     
 }

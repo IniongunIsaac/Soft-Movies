@@ -10,7 +10,6 @@ end
 def utilityPods
   pod 'RealmSwift', '~> 10'
   pod 'Kingfisher'
-  #pod 'RxRealm'
   pod 'AttributedStringBuilder'
   pod 'PopupDialog'
   pod 'IQKeyboardManagerSwift'

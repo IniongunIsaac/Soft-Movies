@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol IInputValidator {
+protocol IInputValidator: Scopable {
     
     func validateEmailAddress(_ email: String) -> ValidationMessage
     

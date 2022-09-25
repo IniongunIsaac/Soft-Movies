@@ -127,8 +127,16 @@ final class AppTextField: BaseView {
     
     fileprivate func updateTextFieldAppearance(success: Bool = true) {
         with(textField) {
-            $0.borderColor = success ? .primaryTextColor.withAlphaComponent(0.7) : .systemRed
-            $0.textColor = success ? .primaryTextColor : .systemRed
+            $0.borderColor = success ? .appGreen.withAlphaComponent(0.7) : .systemRed
+            $0.textColor = success ? .label : .systemRed
+        }
+    }
+    
+    func updateValidationStatus(message: ValidationMessage) {
+        if message.isValid {
+            hideError()
+        } else {
+            showError(message.message)
         }
     }
     

@@ -14,6 +14,8 @@ protocol IMoviesViewModel {
     
     var movies: [Movie] { get set }
     
+    var movieDetails: MovieDetail? { get set }
+    
     var showMovies: PublishSubject<Bool> { get }
     
     func getMovies()

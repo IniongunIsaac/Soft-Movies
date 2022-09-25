@@ -16,6 +16,11 @@ final class MoviesController: BaseViewController<MoviesView, IMoviesViewModel> {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showNavBar()
+    }
+    
     func addProfileNavBarButton() {
         let profileImageView = UIImageView(image: .profileIcon, tintColor: .primaryTextColor, size: 33)
         profileImageView.animateViewOnTapGesture(completion: didTapProfileButton)

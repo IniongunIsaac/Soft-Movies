@@ -18,19 +18,6 @@ public class UIViewTapGestureRecognizer: UITapGestureRecognizer {
 }
 
 extension UIView {
-    
-    static func spacer(_ height: CGFloat = 10) -> UIView {
-        UIView(height: height, backgroundColor: .clear)
-    }
-    
-    static func hspacer(_ width: CGFloat = 10) -> UIView {
-        UIView(width: width, backgroundColor: .clear)
-    }
-    
-    static func separatorLine(_ color: UIColor = .separator) -> UIView {
-        UIView(height: 1, backgroundColor: color)
-    }
-    
     convenience init(subviews: [UIView]? = nil,
                      height: CGFloat? = nil,
                      width: CGFloat? = nil,
@@ -65,18 +52,6 @@ extension UIView {
         if let borderColor = borderColor {
             self.borderColor = borderColor
         }
-    }
-    
-    var id: String? {
-        get { accessibilityIdentifier }
-        set { accessibilityIdentifier = newValue }
-    }
-    
-    func addRoundCorners(_ corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        self.layer.mask = mask
     }
     
     var viewCornerRadius: CGFloat {
@@ -121,43 +96,6 @@ extension UIView {
         sender.action!()
     }
     
-    func fadeIn(duration: TimeInterval = 0.5, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in }) {
-        self.alpha = 0.0
-        
-        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
-            self.isHidden = false
-            self.alpha = 1.0
-        }, completion: completion)
-    }
-    
-    func fadeOut(duration: TimeInterval = 0.5, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
-        self.alpha = 1.0
-        
-        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
-            self.alpha = 0.0
-        }) { (completed) in
-            self.isHidden = true
-            completion(true)
-        }
-    }
-    
-    func addDropShadow(color: UIColor = .darkGray, opacity: Float = 0.5, offSet: CGSize = CGSize(width: -1, height: 1), radius: CGFloat = 5, scale: Bool = true) {
-        layer.masksToBounds = false
-        layer.shadowColor = color.cgColor
-        layer.shadowOpacity = opacity
-        layer.shadowOffset = offSet
-        layer.shadowRadius = radius
-        
-        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        layer.shouldRasterize = true
-        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-    }
-    
-    func addCornerRadius(radius: CGFloat = 5, maskToBounds: Bool = true) {
-        layer.cornerRadius = radius
-        layer.masksToBounds = maskToBounds
-    }
-    
     func animateOnClick(completion: (() -> Void)? = nil) {
         UIView.animate(withDuration: 0.5, animations: {
             self.alpha = 0.5
@@ -190,71 +128,16 @@ extension UIView {
         }
     }
     
-    func animateView(duration: TimeInterval = 0.5, completion: ((_ : String?) -> Void)? = nil) {
-        UIView.animate(withDuration: duration, animations: {
-            self.alpha = 0.5
-        }) { completed in
-            UIView.animate(withDuration: duration, animations: {
-                self.alpha = 1
-                completion?(nil)
-            })
-        }
-    }
-    
     func enableUserInteraction(_ enable: Bool = true) {
         isUserInteractionEnabled = enable
     }
     
-    var width: CGFloat { frame.size.width }
-    
-    var height: CGFloat { frame.size.height }
-    
-    var minY: CGFloat { frame.minY }
-    
-    var maxY: CGFloat { frame.maxY }
-    
-    var minX: CGFloat { frame.minX }
-    
-    var maxX: CGFloat { frame.maxX }
-    
-    var x: CGFloat {
-        get { frame.origin.x }
-        set { frame.origin.x = newValue }
-    }
-    
-    var y: CGFloat {
-        get { frame.origin.y }
-        set { frame.origin.y = newValue }
-    }
-    
-    func addClearBackground() {
-        backgroundColor = .clear
-    }
-    
-    func applyShadow(radius:CGFloat = 5){
+    func applyShadow(radius: CGFloat = 5) {
         layer.shadowColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 0.09).cgColor
         layer.shadowOpacity = 0.8
         layer.shadowRadius = radius
         layer.shadowOffset = .init(width: 0, height: radius)
         
-    }
-    
-    func applyShadowWith(radius: CGFloat) {
-        var shadowLayer: CAShapeLayer!
-
-        if shadowLayer == nil {
-            shadowLayer = CAShapeLayer()
-            
-            shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: radius).cgPath
-            shadowLayer.fillColor = UIColor.clear.cgColor
-            shadowLayer.shadowColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 0.09).cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = .init(width: 0, height: 10)
-            shadowLayer.shadowOpacity = 0.8
-            shadowLayer.shadowRadius = 5
-            
-            layer.insertSublayer(shadowLayer, at: 0)
-        }
     }
     
     func addSubviews(_ views: UIView...) {
@@ -263,44 +146,6 @@ extension UIView {
     
     func addSubviews(_ views: [UIView]) {
         views.forEach { addSubview($0) }
-    }
-    
-    func setBackgroundColor(_ color: UIColor) {
-        backgroundColor = color
-    }
-    
-    func bringToFront(_ views: UIView...) {
-        views.forEach { bringSubviewToFront($0) }
-    }
-    
-    func faded(_ fade: Bool = true, alpha: CGFloat = 0.7) {
-        self.alpha = fade ? alpha : 1
-    }
-    
-    @objc func dismissKeyboard() {
-        endEditing(true)
-    }
-}
-
-extension Array where Element == UIView {
-    func addClearBackground() {
-        forEach { $0.addClearBackground() }
-    }
-    
-    func showViews(_ show: Bool = true) {
-        forEach { $0.showView(show) }
-    }
-    
-    func enableUserInteraction(_ enable: Bool = true) {
-        forEach { $0.enableUserInteraction(enable) }
-    }
-    
-    func addRoundCorners(_ corners: UIRectCorner, radius: CGFloat) {
-        forEach { $0.addRoundCorners(corners, radius: radius) }
-    }
-    
-    func faded(_ fade: Bool = true, alpha: CGFloat = 0.7) {
-        forEach { $0.faded(fade, alpha: alpha) }
     }
 }
 
@@ -424,22 +269,6 @@ extension UILabel {
         }
     }
     
-    convenience init(attributedText: NSAttributedString, numberOfLines: Int = 1, alignment: NSTextAlignment = .center) {
-        self.init(frame: .zero)
-        self.attributedText = attributedText
-        self.numberOfLines = numberOfLines
-        self.textAlignment = alignment
-        self.adjustsFontSizeToFitWidth = true
-    }
-    
-    func setLineHeight(spacing: CGFloat) {
-        let attributedString = NSMutableAttributedString(string: self.text ?? "")
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = spacing
-        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-        attributedText = attributedString
-    }
-    
     func underline() {
         let attr: NSMutableAttributedString =  NSMutableAttributedString(string: self.text ?? "")
         attr.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attr.length))
@@ -518,17 +347,6 @@ extension UITextField {
 }
 
 extension UIScrollView {
-    convenience init(children: [UIView], showsVerticalScrollIndicator: Bool = false, showsHorizontalScrollIndicator: Bool = false) {
-        self.init(frame: .zero)
-        addSubviews(children)
-        self.showsVerticalScrollIndicator = showsVerticalScrollIndicator
-        self.showsHorizontalScrollIndicator = showsHorizontalScrollIndicator
-    }
-    
-    func updateContentView(_ offset: CGFloat = 50) {
-        contentSize.height = (subviews.sorted(by: { $0.frame.maxY < $1.frame.maxY }).last?.frame.maxY ?? contentSize.height) + offset
-    }
-    
     func showIndicators(_ show: Bool = true) {
         showsVerticalScrollIndicator = show
         showsHorizontalScrollIndicator = show
@@ -541,25 +359,4 @@ extension UIScrollView {
     var _leadingAnchor: NSLayoutXAxisAnchor? { frameLayoutGuide.leadingAnchor }
     
     var _trailingAnchor: NSLayoutXAxisAnchor? { frameLayoutGuide.trailingAnchor }
-}
-
-extension UIStackView {
-    func addArrangedSubviews(_ views: [UIView]) {
-        views.forEach { addArrangedSubview($0) }
-    }
-    
-    func removeAllArrangedSubviews() {
-        subviews.forEach { removeArrangedSubview($0) }
-    }
-    
-    func remove(subview: UIView) {
-        removeArrangedSubview(subview)
-        subview.removeFromSuperview()
-    }
-    
-    func removeArrangedSubviews() {
-        arrangedSubviews.forEach { (subview) in
-            remove(subview: subview)
-        }
-    }
 }

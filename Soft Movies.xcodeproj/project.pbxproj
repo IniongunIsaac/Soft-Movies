@@ -48,7 +48,6 @@
 		14F7ADA328DEF3C000CDAB65 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7ADA228DEF3C000CDAB65 /* UIView+Utils.swift */; };
 		14F7ADA528DEF44500CDAB65 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7ADA428DEF44500CDAB65 /* UIColor+Utils.swift */; };
 		14F7ADA728DEF46B00CDAB65 /* UIFont+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7ADA628DEF46B00CDAB65 /* UIFont+Utils.swift */; };
-		14F7ADA928DEF4D700CDAB65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7ADA828DEF4D700CDAB65 /* Constants.swift */; };
 		14F7ADAB28DEF7A500CDAB65 /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7ADAA28DEF7A500CDAB65 /* Bundle+Utils.swift */; };
 		14F7ADAD28DEF85C00CDAB65 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7ADAC28DEF85C00CDAB65 /* BaseView.swift */; };
 		14F7ADAF28DEF88000CDAB65 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7ADAE28DEF88000CDAB65 /* StackView.swift */; };
@@ -144,7 +143,6 @@
 		14F7ADA228DEF3C000CDAB65 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		14F7ADA428DEF44500CDAB65 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		14F7ADA628DEF46B00CDAB65 /* UIFont+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Utils.swift"; sourceTree = "<group>"; };
-		14F7ADA828DEF4D700CDAB65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		14F7ADAA28DEF7A500CDAB65 /* Bundle+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
 		14F7ADAC28DEF85C00CDAB65 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		14F7ADAE28DEF88000CDAB65 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
@@ -434,7 +432,6 @@
 				14F7ADA228DEF3C000CDAB65 /* UIView+Utils.swift */,
 				14F7ADA428DEF44500CDAB65 /* UIColor+Utils.swift */,
 				14F7ADA628DEF46B00CDAB65 /* UIFont+Utils.swift */,
-				14F7ADA828DEF4D700CDAB65 /* Constants.swift */,
 				14F7ADAA28DEF7A500CDAB65 /* Bundle+Utils.swift */,
 				14F7ADB828DEFAA500CDAB65 /* UIViewController+Utils.swift */,
 				14F7ADBA28DEFB5500CDAB65 /* InlineFuncs.swift */,
@@ -872,7 +869,6 @@
 				14F7ADDC28DF083700CDAB65 /* BaseScrollView.swift in Sources */,
 				14547E7A28E061780030E9E6 /* MoviesNavRoute.swift in Sources */,
 				14547E7028E05A700030E9E6 /* LocalDatasourceImpl.swift in Sources */,
-				14F7ADA928DEF4D700CDAB65 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

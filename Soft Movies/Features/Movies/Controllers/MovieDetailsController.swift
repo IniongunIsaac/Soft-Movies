@@ -15,7 +15,15 @@ final class MovieDetailsController: BaseViewController<MovieDetailsView, IMovies
     
     override func configureViews() {
         super.configureViews()
-        kview.viewModel = viewModel
+        with(kview) {
+            $0.viewModel = viewModel
+            $0.showDetails()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showNavBar(false)
     }
 
 }

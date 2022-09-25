@@ -53,6 +53,9 @@ extension MoviesView: UICollectionViewDataSource, UICollectionViewDelegate {
         let movie = viewModel.movies[indexPath.row]
         return with(collectionView.deque(cell: MovieCell.self, at: indexPath)) {
             $0.configure(movie: movie)
+            $0.animateViewOnTapGesture { [weak self] in
+                self?.viewModel.getMovieDetails(movie.imdbID)
+            }
         }
     }
     

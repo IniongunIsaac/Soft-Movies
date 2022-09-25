@@ -32,6 +32,12 @@ final class MoviesCoordinator: Coordinator {
         }
     }
     
+    private func showMovieDetails() {
+        with(MovieDetailsController(viewModel: viewModel)) {
+            navController.pushViewController($0, animated: true)
+        }
+    }
+    
 }
 
 extension MoviesCoordinator: MoviesCoordinatorDelegate {
@@ -40,7 +46,9 @@ extension MoviesCoordinator: MoviesCoordinatorDelegate {
         case .profile:
             break
         case .movieDetails:
-            break
+            showMovieDetails()
+        case .back:
+            navController.popViewController(animated: true)
         }
     }
 }

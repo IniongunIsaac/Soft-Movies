@@ -16,6 +16,7 @@ final class MoviesViewModelImpl: BaseViewModel, IMoviesViewModel {
     weak var coordinatorDelegate: MoviesCoordinatorDelegate?
     var movies = [Movie]()
     var showMovies = PublishSubject<Bool>()
+    var movieDetails: MovieDetail? = nil
     
     init(localDatasource: ILocalDatasource = LocalDatasourceImpl(),
          moviesRemote: IMoviesRemoteDatasource = MoviesRemoteDatasourceImpl()
@@ -48,7 +49,14 @@ final class MoviesViewModelImpl: BaseViewModel, IMoviesViewModel {
     }
     
     func getMovieDetails(_ id: String) {
-        
+        let params = [
+            "apikey": Bundle.main.apiKey,
+            "i": id
+        ]
+        subscribe(moviesRemote.getMovieDetails(params: params), success: { [weak self] movie in
+            self?.movieDetails = movie
+            self?.coordinatorDelegate?.navigate(to: .movieDetails)
+        })
     }
     
     private func movieParams(searchTerm: String = "Batman", page: Int = 1) -> Parameters {

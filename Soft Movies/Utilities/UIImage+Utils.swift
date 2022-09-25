@@ -20,5 +20,7 @@ extension UIImage {
     static var profileIcon: UIImage { UIImage(named: "profile_icon") ?? UIImage() }
     
     static var moviePlaceholderIcon: UIImage { UIImage(named: "movie_placeholder_icon") ?? UIImage() }
+    
+    static var arrowLeftIcon: UIImage { UIImage(named: "arrow_left_icon") ?? UIImage() }
 }
 

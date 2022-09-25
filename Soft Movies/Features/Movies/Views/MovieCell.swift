@@ -25,6 +25,6 @@ final class MovieCell: BaseCollectionViewCell {
     }
     
     func configure(movie: Movie) {
-        posterImageView.setImageFromURL(url: movie.poster, placeholderImage: .moviePlaceholderIcon.withTintColor(.tertiaryLabel))
+        posterImageView.setImageFromURL(url: movie.poster, placeholderImage: .moviePlaceholderIcon)
     }
 }

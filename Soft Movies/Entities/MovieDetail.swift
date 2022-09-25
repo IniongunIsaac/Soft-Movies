@@ -93,8 +93,4 @@ class MovieDetail: Object, Codable {
     var ratingsText: String {
         ratings.map { $0.sourceValue }.joined(separator: ", ")
     }
-    
-//    var movie: Movie {
-//        Movie(imdbID: imdbID, title: title.orNA, year: year.orNA, type: type.orNA, poster: poster.orNA)
-//    }
 }

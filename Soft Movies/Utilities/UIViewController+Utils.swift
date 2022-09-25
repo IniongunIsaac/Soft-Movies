@@ -27,20 +27,6 @@ extension UIViewController {
         }
     }
     
-    func showNavigationBarButton(_ status: Bool) {
-        if !status {
-            navigationItem.rightBarButtonItem?.customView?.alpha = 0.5
-            navigationItem.rightBarButtonItem?.isEnabled = false
-        } else {
-            navigationItem.rightBarButtonItem?.customView?.alpha = 1
-            navigationItem.rightBarButtonItem?.isEnabled = true
-        }
-    }
-    
-    var _width: CGFloat { UIScreen.main.bounds.width }
-    
-    var _height: CGFloat { UIScreen.main.bounds.height }
-    
     func addSubviews(_ views: UIView...) {
         views.forEach { addSubview($0) }
     }
@@ -80,42 +66,11 @@ extension UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: text, style: .plain, target: nil, action: nil)
     }
     
-    func showBackButton(_ show: Bool = true) {
-        navigationItem.setHidesBackButton(!show, animated: true)
-    }
-    
-    func _popViewController(animated: Bool = true) {
-        navigationController?.popViewController(animated: animated)
-    }
-    
-    func _popToRootViewController(animated: Bool = true) {
-        navigationController?.popToRootViewController(animated: animated)
-    }
-    
-    func _pushViewController(_ viewcontroller: UIViewController, animated: Bool = true) {
-        navigationController?.pushViewController(viewcontroller, animated: animated)
-    }
-    
     func dismissViewController(animated: Bool = true, completion: (() -> Void)? = nil) {
         dismiss(animated: animated, completion: completion)
     }
     
-    func popToViewController(ofClass: AnyClass, animated: Bool = true) {
-        if let vc = navigationController?.viewControllers.last(where: { $0.isKind(of: ofClass) }) {
-            navigationController?.popToViewController(vc, animated: animated)
-        }
-    }
-    
-    func setViewControllers(using viewController: UIViewController, animate: Bool = false) {
-        navigationController?.setViewControllers([viewController], animated: animate)
-    }
-    
     func showMessage(_ message: String, type: ToastType = .success) {
-        Toast.shared.show(message, type: type)
-    }
-    
-    func showAlert(message: String, type: ToastType = .success) {
-        hideAlert()
         Toast.shared.show(message, type: type)
     }
     

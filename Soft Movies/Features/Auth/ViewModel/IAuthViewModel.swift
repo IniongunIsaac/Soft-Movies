@@ -14,6 +14,8 @@ protocol IAuthViewModel {
     
     var coordinatorDelegate: AuthCoordinatorDelegate? { get set }
     
+    func getUser()
+    
     func navigate(to route: AuthNavRoute)
     
     func signIn(email: String, password: String)

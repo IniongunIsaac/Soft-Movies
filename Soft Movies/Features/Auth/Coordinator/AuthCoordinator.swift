@@ -41,7 +41,9 @@ final class AuthCoordinator: Coordinator {
     }
     
     private func startMoviesCoordinator() {
-        
+        with(MoviesCoordinator(navController: navController)) {
+            $0.start()
+        }
     }
     
 }

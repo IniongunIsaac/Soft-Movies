@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class AppTextField: BaseView {
-    private let titleLabel = UILabel(text: "Title Label", font: .avenirRegular(14), numberOfLines: 0, color: .aSecondaryLabel, alignment: .left)
+    private let titleLabel = UILabel(text: "Title Label", font: .avenirRegular(14), numberOfLines: 0, color: .secondaryLabel, alignment: .left)
     private let errorLabel = UILabel(text: "Error Label", font: .avenirRegular(13), numberOfLines: 0, color: .systemRed, alignment: .left)
     let textField = TextField()
     private let passwordIconImageView = UIImageView(image: .eyeOpenIcon, tintColor: .aSecondaryLabel, size: 22)
@@ -85,7 +85,7 @@ final class AppTextField: BaseView {
             $0.constraintHeight(constant: 50)
             $0.viewCornerRadius = 6
             $0.viewBorderWidth = 1
-            $0.borderColor = .aSecondaryLabel
+            $0.borderColor = .secondaryLabel
             $0.clipsToBounds = true
         }
         
@@ -127,7 +127,7 @@ final class AppTextField: BaseView {
     
     fileprivate func updateTextFieldAppearance(success: Bool = true) {
         with(textField) {
-            $0.borderColor = success ? .appGreen.withAlphaComponent(0.7) : .systemRed
+            $0.borderColor = success ? .secondaryLabel : .systemRed
             $0.textColor = success ? .label : .systemRed
         }
     }

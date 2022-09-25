@@ -14,6 +14,7 @@ final class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
     private let validator: IInputValidator
     private let localDatasource: ILocalDatasource
     weak var coordinatorDelegate: AuthCoordinatorDelegate?
+    private var user: User?
     
     init(preference: IPreference = PreferenceImpl(),
          validator: IInputValidator = InputValidatorImpl(),
@@ -25,6 +26,14 @@ final class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
     }
     
     var validationMessages = PublishSubject<[ValidationMessage]>()
+    
+    func getUser() {
+        if preference.hasLoggedIn {
+            subscribe(localDatasource.getItems(for: User.self), success: { [weak self] users in
+                self?.user = users.first
+            })
+        }
+    }
     
     func navigate(to route: AuthNavRoute) {
         coordinatorDelegate?.navigate(to: route)
@@ -40,7 +49,11 @@ final class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
         validationMessages.onNext(validations)
         
         if !validations.map({ $0.isValid }).contains(false) {
-            
+            if let user = user, user.email == email, user.password == password {
+                navigate(to: .movies)
+            } else {
+                showMessage("Invalid credentials", type: .error)
+            }
         }
     }
     

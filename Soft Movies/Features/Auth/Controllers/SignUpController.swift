@@ -8,14 +8,15 @@
 import UIKit
 
 final class SignUpController: BaseViewController<SignUpView, IAuthViewModel> {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setBackButtonText()
     }
     
     override func configureViews() {
         super.configureViews()
+        backgroundColor = .systemBackground
         kview.viewModel = viewModel
     }
     

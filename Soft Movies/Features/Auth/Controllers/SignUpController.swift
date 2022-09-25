@@ -11,6 +11,12 @@ final class SignUpController: BaseViewController<SignUpView, IAuthViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackButtonText()
+    }
+    
+    override func configureViews() {
+        super.configureViews()
+        kview.viewModel = viewModel
     }
 
 }

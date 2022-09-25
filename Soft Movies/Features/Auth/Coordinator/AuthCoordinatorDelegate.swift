@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol AuthCoordinatorDelegate {
-    
+protocol AuthCoordinatorDelegate: AnyObject {
+    func navigate(to route: AuthNavRoute)
 }

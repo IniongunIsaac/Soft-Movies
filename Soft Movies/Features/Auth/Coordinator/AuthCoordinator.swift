@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class AuthCoordinator: Coordinator, AuthCoordinatorDelegate {
+final class AuthCoordinator: Coordinator {
     
     var parentCoordinator: Coordinator?
     var childCoordinators: [Coordinator] = []
@@ -21,11 +21,11 @@ final class AuthCoordinator: Coordinator, AuthCoordinatorDelegate {
         self.navController = root
         self.rootViewController = root
         self.preference = preference
+        authViewModel.coordinatorDelegate = self
     }
     
     func start() {
-        //preference.hasLoggedIn ? showLogin() : showSignUp()
-        showLogin()
+        preference.hasLoggedIn ? showLogin() : showSignUp()
     }
     
     private func showLogin() {
@@ -40,4 +40,19 @@ final class AuthCoordinator: Coordinator, AuthCoordinatorDelegate {
         }
     }
     
+}
+
+extension AuthCoordinator: AuthCoordinatorDelegate {
+    func navigate(to route: AuthNavRoute) {
+        guard navController.viewControllers.count < 2 else {
+            navController.popViewController(animated: true)
+            return
+        }
+        switch route {
+        case .signIn:
+            showLogin()
+        case .signUp:
+            showSignUp()
+        }
+    }
 }

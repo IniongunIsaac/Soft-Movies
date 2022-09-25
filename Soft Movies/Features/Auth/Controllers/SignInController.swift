@@ -13,14 +13,10 @@ final class SignInController: BaseViewController<SignInView, IAuthViewModel> {
         super.viewDidLoad()
         backgroundColor = .aSystemBackground
     }
-
-}
-
-final class SignInController_: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        backgroundColor = .red
+    
+    override func configureViews() {
+        super.configureViews()
+        kview.viewModel = viewModel
     }
 
 }

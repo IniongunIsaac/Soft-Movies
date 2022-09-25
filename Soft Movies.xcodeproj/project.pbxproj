@@ -127,6 +127,11 @@
 		14547E9528E06BF50030E9E6 /* MovieDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsController.swift; sourceTree = "<group>"; };
 		14547E9728E06C330030E9E6 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
 		14547E9928E06E610030E9E6 /* AppCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionView.swift; sourceTree = "<group>"; };
+		1495415128E0F9910097FDAF /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		1495415228E0F9910097FDAF /* create_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_account.png; sourceTree = "<group>"; };
+		1495415328E0F9920097FDAF /* movie_details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_details.png; sourceTree = "<group>"; };
+		1495415428E0F9920097FDAF /* movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movies.png; sourceTree = "<group>"; };
+		1495415528E0F9AC0097FDAF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		14D204C90E8AB9D9346614D2 /* Pods_Soft_MoviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soft_MoviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F6948028DF56B3005C75F4 /* AuthNavRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavRoute.swift; sourceTree = "<group>"; };
 		14F7AD8528DEE83D00CDAB65 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -212,6 +217,7 @@
 		141FFC3F28DEE72000A485A1 = {
 			isa = PBXGroup;
 			children = (
+				1495415528E0F9AC0097FDAF /* README.md */,
 				141FFC4A28DEE72000A485A1 /* Soft Movies */,
 				141FFC6128DEE72300A485A1 /* Soft MoviesTests */,
 				141FFC6B28DEE72300A485A1 /* Soft MoviesUITests */,
@@ -234,6 +240,7 @@
 		141FFC4A28DEE72000A485A1 /* Soft Movies */ = {
 			isa = PBXGroup;
 			children = (
+				1495415028E0F9570097FDAF /* Screenshots */,
 				14547E6C28E057A20030E9E6 /* Entities */,
 				14F7AD8328DEE80A00CDAB65 /* App */,
 				14F7ADC728DF00F500CDAB65 /* Features */,
@@ -352,6 +359,17 @@
 				14547E9928E06E610030E9E6 /* AppCollectionView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		1495415028E0F9570097FDAF /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				1495415228E0F9910097FDAF /* create_account.png */,
+				1495415128E0F9910097FDAF /* login.png */,
+				1495415328E0F9920097FDAF /* movie_details.png */,
+				1495415428E0F9920097FDAF /* movies.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		14F6947F28DF56A3005C75F4 /* Utils */ = {

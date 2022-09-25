@@ -31,6 +31,6 @@ The app was built using the following:
 * Build and run the project on the XCode Simulator or any physically connected iOS device.
 
 ## Screenshots
-<img src="https://github.com/IniongunIsaac/Soft-Movies/blob/main/Soft-Movies/Screenshots/login.png" width="400" height="750" alt="Sign In">     <img src="https://github.com/IniongunIsaac/Soft-Movies/blob/main/Soft-Movies/Screenshots/create_account.png" width="400" height="750" alt="Create Account">
+<img src="https://github.com/IniongunIsaac/Soft-Movies/blob/main/Soft%20Movies/Screenshots/login.png" width="400" height="750" alt="Sign In">     <img src="https://github.com/IniongunIsaac/Soft-Movies/blob/main/Soft%20Movies/Screenshots/create_account.png" width="400" height="750" alt="Create Account">
 
-<img src="https://github.com/IniongunIsaac/Soft-Movies/blob/main/Soft-Movies/Screenshots/movies.png" width="400" height="750" alt="Movies">     <img src="https://github.com/IniongunIsaac/Soft-Movies/blob/main/Soft-Movies/Screenshots/movie_details.png" width="400" height="750" alt="Movie Details">
+<img src="https://github.com/IniongunIsaac/Soft-Movies/blob/main/Soft%20Movies/Screenshots/movies.png" width="400" height="750" alt="Movies">     <img src="https://github.com/IniongunIsaac/Soft-Movies/blob/main/Soft%20Movies/Screenshots/movie_details.png" width="400" height="750" alt="Movie Details">

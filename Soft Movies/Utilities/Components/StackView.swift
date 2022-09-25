@@ -10,7 +10,11 @@ import UIKit
 
 final class VStackView: UIStackView {
     
-    init(subviews: [UIView] = [], spacing: CGFloat = 0, distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill) {
+    init(subviews: [UIView] = [],
+         spacing: CGFloat = 0,
+         distribution: UIStackView.Distribution = .fill,
+         alignment: UIStackView.Alignment = .fill
+    ) {
         super.init(frame: .zero)
         subviews.forEach({addArrangedSubview($0)})
         self.spacing = spacing
@@ -28,7 +32,11 @@ final class VStackView: UIStackView {
 
 final class HStackView: UIStackView {
     
-    init(subviews: [UIView], spacing: CGFloat = 0, distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill) {
+    init(subviews: [UIView],
+         spacing: CGFloat = 0,
+         distribution: UIStackView.Distribution = .fill,
+         alignment: UIStackView.Alignment = .fill
+    ) {
         super.init(frame: .zero)
         subviews.forEach({addArrangedSubview($0)})
         self.spacing = spacing

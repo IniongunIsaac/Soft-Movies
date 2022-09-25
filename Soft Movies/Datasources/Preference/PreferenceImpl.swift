@@ -11,4 +11,7 @@ struct PreferenceImpl: IPreference {
     
     @UserDefaultPrimitive(key: .hasLoggedIn, default: false)
     var hasLoggedIn: Bool
+    
+    @UserDefaultPrimitive(key: .hasCreatedAccount, default: false)
+    var hasCreatedAccount: Bool
 }

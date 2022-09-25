@@ -50,6 +50,7 @@ final class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
         
         if !validations.map({ $0.isValid }).contains(false) {
             if let user = user, user.email == email, user.password == password {
+                preference.hasLoggedIn = true
                 navigate(to: .movies)
             } else {
                 showMessage("Invalid credentials", type: .error)
@@ -75,7 +76,7 @@ final class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
         if !validations.map({ $0.isValid }).contains(false) {
             let user = User(fullName: fullname, email: email, password: password)
             subscribe(localDatasource.saveItems(items: [user]), success: { [weak self] in
-                self?.preference.hasLoggedIn = true
+                self?.preference.hasCreatedAccount = true
                 self?.showMessage("Account created successfully")
                 runAfter(0.3) {
                     self?.coordinatorDelegate?.navigate(to: .movies)

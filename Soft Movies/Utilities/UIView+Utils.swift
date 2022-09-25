@@ -27,7 +27,7 @@ extension UIView {
         UIView(width: width, backgroundColor: .clear)
     }
     
-    static func separatorLine(_ color: UIColor = .aSeparator) -> UIView {
+    static func separatorLine(_ color: UIColor = .separator) -> UIView {
         UIView(height: 1, backgroundColor: color)
     }
     
@@ -306,117 +306,8 @@ extension Array where Element == UIView {
 
 // MARK: - UICollectionView Extensions
 extension UICollectionView {
-
-    func setEmptyMessage(_ message: String = Constants.DATA_NOT_FOUND) {
-        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
-        messageLabel.text = message
-        messageLabel.textColor = .aLabel
-        messageLabel.numberOfLines = 0
-        messageLabel.textAlignment = .center
-        messageLabel.font = .avenirRegular(15)
-        messageLabel.sizeToFit()
-
-        self.backgroundView = messageLabel
-    }
-
-    func restore() {
-        self.backgroundView = nil
-    }
-    
     func deque<T: UICollectionViewCell>(cell: T.Type, at indexPath: IndexPath) -> T {
         dequeueReusableCell(withReuseIdentifier: cell.className, for: indexPath) as! T
-    }
-}
-
-// MARK: - UITableView Extensions
-extension UITableView {
-    
-    convenience init(cell: UITableViewCell.Type, reuseId: String = "", showIndicators: Bool = false, delegate: UITableViewDelegate? = nil, datasource: UITableViewDataSource? = nil, separatorStyle: UITableViewCell.SeparatorStyle = .none, separatorColor: UIColor = .clear, scrollable: Bool = true) {
-        self.init()
-        self.showIndicators(showIndicators)
-        if let delegate = delegate {
-            self.delegate = delegate
-        }
-        if let datasource = datasource {
-            self.dataSource = datasource
-        }
-        self.separatorStyle = separatorStyle
-        self.separatorColor = separatorColor
-        register(cell.self, forCellReuseIdentifier: cell.className)
-        isScrollEnabled = scrollable
-    }
-    
-    convenience init(cells: [UITableViewCell.Type], showIndicators: Bool = false, delegate: UITableViewDelegate? = nil, datasource: UITableViewDataSource? = nil, separatorStyle: UITableViewCell.SeparatorStyle = .none, separatorColor: UIColor = .clear, scrollable: Bool = true) {
-        self.init()
-        self.showIndicators(showIndicators)
-        if let delegate = delegate {
-            self.delegate = delegate
-        }
-        if let datasource = datasource {
-            self.dataSource = datasource
-        }
-        self.separatorStyle = separatorStyle
-        self.separatorColor = separatorColor
-        cells.forEach { register($0.self, forCellReuseIdentifier: $0.className) }
-        isScrollEnabled = scrollable
-    }
-
-    func setEmptyMessage(_ message: String = Constants.DATA_NOT_FOUND, separatorStyle: UITableViewCell.SeparatorStyle = .none) {
-        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
-        messageLabel.text = message
-        messageLabel.textColor = .aLabel
-        messageLabel.numberOfLines = 0
-        messageLabel.textAlignment = .center
-        messageLabel.font = .avenirRegular(15)
-        messageLabel.sizeToFit()
-
-        self.backgroundView = messageLabel
-        self.isScrollEnabled = false
-        self.separatorStyle = separatorStyle
-    }
-
-    func restore(separatorStyle: UITableViewCell.SeparatorStyle = .none) {
-        self.backgroundView = nil
-        self.isScrollEnabled = true
-        self.separatorStyle = separatorStyle
-    }
-    
-    func deque<T: UITableViewCell>(cell: T.Type, at indexPath: IndexPath) -> T {
-        dequeueReusableCell(withIdentifier: cell.className, for: indexPath) as! T
-    }
-    
-    func scrollable(_ scrollable: Bool = true) {
-        isScrollEnabled = scrollable
-    }
-}
-
-extension Array where Element == UITableView {
-    func scrollable(_ scrollable: Bool = true) {
-        forEach { $0.scrollable(scrollable) }
-    }
-}
-
-extension Reactive where Base: UITableView {
-    func isEmpty(message: String = Constants.DATA_NOT_FOUND) -> Binder<Bool> {
-        return Binder(base) { tableView, isEmpty in
-            if isEmpty {
-                tableView.setEmptyMessage(message)
-            } else {
-                tableView.restore()
-            }
-        }
-    }
-}
-
-extension Reactive where Base: UICollectionView {
-    func isEmpty(message: String = Constants.DATA_NOT_FOUND) -> Binder<Bool> {
-        return Binder(base) { collectionView, isEmpty in
-            if isEmpty {
-                collectionView.setEmptyMessage(message)
-            } else {
-                collectionView.restore()
-            }
-        }
     }
 }
 
@@ -435,12 +326,6 @@ extension UIImageView {
                     .cacheOriginalImage
                 ])
         }
-    }
-    
-    func setImageColor(_ color: UIColor) {
-      let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
-      self.image = templateImage
-      self.tintColor = color
     }
       
     convenience init(image: UIImage? = nil,
@@ -513,7 +398,17 @@ extension UIButton {
 
 extension UILabel {
     
-    convenience init(text: String, font: UIFont = .avenirRegular(16), numberOfLines: Int = 1, color: UIColor = .aLabel, alignment: NSTextAlignment = .center, adjustsFontSizeToFitWidth: Bool = true, underlined: Bool = false, huggingPriority: UILayoutPriority? = nil, huggingAxis: NSLayoutConstraint.Axis? = nil, lineBreakMode: NSLineBreakMode = .byWordWrapping) {
+    convenience init(text: String,
+                     font: UIFont = .avenirRegular(16),
+                     numberOfLines: Int = 1,
+                     color: UIColor = .label,
+                     alignment: NSTextAlignment = .center,
+                     adjustsFontSizeToFitWidth: Bool = true,
+                     underlined: Bool = false,
+                     huggingPriority: UILayoutPriority? = nil,
+                     huggingAxis: NSLayoutConstraint.Axis? = nil,
+                     lineBreakMode: NSLineBreakMode = .byWordWrapping
+    ) {
         self.init(frame: .zero)
         self.text = text
         self.textColor = color

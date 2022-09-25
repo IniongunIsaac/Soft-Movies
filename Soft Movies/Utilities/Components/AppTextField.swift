@@ -12,7 +12,7 @@ final class AppTextField: BaseView {
     private let titleLabel = UILabel(text: "Title Label", font: .avenirRegular(14), numberOfLines: 0, color: .secondaryLabel, alignment: .left)
     private let errorLabel = UILabel(text: "Error Label", font: .avenirRegular(13), numberOfLines: 0, color: .systemRed, alignment: .left)
     let textField = TextField()
-    private let passwordIconImageView = UIImageView(image: .eyeOpenIcon, tintColor: .aSecondaryLabel, size: 22)
+    private let passwordIconImageView = UIImageView(image: .eyeOpenIcon, tintColor: .secondaryLabel, size: 22)
     private var passwordVisible = true
     private var heightConstraint: NSLayoutConstraint?
     private var errorLabelHeightConstraint: NSLayoutConstraint?
@@ -38,7 +38,7 @@ final class AppTextField: BaseView {
         with(textField) {
             $0.keyboardType = keyboardType
             $0.backgroundColor = .clear
-            $0.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.font: UIFont.avenirRegular(14), .foregroundColor: UIColor.aPlaceholderText])
+            $0.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.font: UIFont.avenirRegular(14), .foregroundColor: UIColor.placeholderText])
             $0.font = .avenirRegular(15)
             $0.delegate = self
         }

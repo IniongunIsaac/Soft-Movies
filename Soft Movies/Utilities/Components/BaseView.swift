@@ -11,7 +11,7 @@ import UIKit
 open class BaseView: UIView {
 
     open func setup() {
-        backgroundColor = .aSystemBackground
+        backgroundColor = .systemBackground
     }
     
     open func layout() {}

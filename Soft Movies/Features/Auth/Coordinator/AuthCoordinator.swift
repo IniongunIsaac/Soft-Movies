@@ -25,7 +25,7 @@ final class AuthCoordinator: Coordinator {
     }
     
     func start() {
-        preference.hasLoggedIn ? showLogin() : showSignUp()
+        preference.hasCreatedAccount ? showLogin() : showSignUp()
     }
     
     private func showLogin() {

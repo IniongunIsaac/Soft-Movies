@@ -16,7 +16,6 @@ final class SignUpController: BaseViewController<SignUpView, IAuthViewModel> {
     
     override func configureViews() {
         super.configureViews()
-        backgroundColor = .systemBackground
         kview.viewModel = viewModel
     }
     

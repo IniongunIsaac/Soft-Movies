@@ -9,4 +9,6 @@ import Foundation
 
 protocol IPreference {
     var hasLoggedIn: Bool { get set }
+    
+    var hasCreatedAccount: Bool { get set }
 }

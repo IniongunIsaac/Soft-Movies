@@ -8,5 +8,5 @@
 import Foundation
 
 enum MoviesNavRoute {
-    case profile
+    case profile, movieDetails
 }

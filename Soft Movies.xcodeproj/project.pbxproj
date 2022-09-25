@@ -22,6 +22,17 @@
 		14547E7E28E061C10030E9E6 /* MoviesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E7D28E061C10030E9E6 /* MoviesCoordinator.swift */; };
 		14547E8028E0658C0030E9E6 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E7F28E0658C0030E9E6 /* MoviesView.swift */; };
 		14547E8228E065C00030E9E6 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E8128E065C00030E9E6 /* MovieCell.swift */; };
+		14547E8428E067490030E9E6 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E8328E067490030E9E6 /* MovieDetail.swift */; };
+		14547E8628E068480030E9E6 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E8528E068480030E9E6 /* Rating.swift */; };
+		14547E8828E068A10030E9E6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E8728E068A10030E9E6 /* Movie.swift */; };
+		14547E8B28E06A570030E9E6 /* IMoviesRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E8A28E06A570030E9E6 /* IMoviesRemoteDatasource.swift */; };
+		14547E8D28E06A7E0030E9E6 /* MoviesRemoteDatasourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E8C28E06A7E0030E9E6 /* MoviesRemoteDatasourceImpl.swift */; };
+		14547E8F28E06AE10030E9E6 /* IMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E8E28E06AE10030E9E6 /* IMoviesViewModel.swift */; };
+		14547E9228E06B090030E9E6 /* MoviesViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E9128E06B090030E9E6 /* MoviesViewModelImpl.swift */; };
+		14547E9428E06BC60030E9E6 /* MoviesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E9328E06BC60030E9E6 /* MoviesController.swift */; };
+		14547E9628E06BF50030E9E6 /* MovieDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E9528E06BF50030E9E6 /* MovieDetailsController.swift */; };
+		14547E9828E06C330030E9E6 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E9728E06C330030E9E6 /* MovieDetailsView.swift */; };
+		14547E9A28E06E610030E9E6 /* AppCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14547E9928E06E610030E9E6 /* AppCollectionView.swift */; };
 		14F6948128DF56B3005C75F4 /* AuthNavRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6948028DF56B3005C75F4 /* AuthNavRoute.swift */; };
 		14F7AD8628DEE83D00CDAB65 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7AD8528DEE83D00CDAB65 /* Coordinator.swift */; };
 		14F7AD8828DEE87900CDAB65 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7AD8728DEE87900CDAB65 /* AppCoordinator.swift */; };
@@ -106,6 +117,17 @@
 		14547E7D28E061C10030E9E6 /* MoviesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCoordinator.swift; sourceTree = "<group>"; };
 		14547E7F28E0658C0030E9E6 /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
 		14547E8128E065C00030E9E6 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		14547E8328E067490030E9E6 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		14547E8528E068480030E9E6 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		14547E8728E068A10030E9E6 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		14547E8A28E06A570030E9E6 /* IMoviesRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMoviesRemoteDatasource.swift; sourceTree = "<group>"; };
+		14547E8C28E06A7E0030E9E6 /* MoviesRemoteDatasourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRemoteDatasourceImpl.swift; sourceTree = "<group>"; };
+		14547E8E28E06AE10030E9E6 /* IMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMoviesViewModel.swift; sourceTree = "<group>"; };
+		14547E9128E06B090030E9E6 /* MoviesViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModelImpl.swift; sourceTree = "<group>"; };
+		14547E9328E06BC60030E9E6 /* MoviesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesController.swift; sourceTree = "<group>"; };
+		14547E9528E06BF50030E9E6 /* MovieDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsController.swift; sourceTree = "<group>"; };
+		14547E9728E06C330030E9E6 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		14547E9928E06E610030E9E6 /* AppCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionView.swift; sourceTree = "<group>"; };
 		14D204C90E8AB9D9346614D2 /* Pods_Soft_MoviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soft_MoviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F6948028DF56B3005C75F4 /* AuthNavRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavRoute.swift; sourceTree = "<group>"; };
 		14F7AD8528DEE83D00CDAB65 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -245,6 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				14547E7128E05AF10030E9E6 /* User.swift */,
+				14547E8328E067490030E9E6 /* MovieDetail.swift */,
+				14547E8528E068480030E9E6 /* Rating.swift */,
+				14547E8728E068A10030E9E6 /* Movie.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -252,6 +277,7 @@
 		14547E7328E0612E0030E9E6 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				14547E9028E06AF40030E9E6 /* ViewModel */,
 				14547E7728E061550030E9E6 /* Controllers */,
 				14547E7628E0614F0030E9E6 /* Views */,
 				14547E7528E061430030E9E6 /* Coordinator */,
@@ -282,6 +308,7 @@
 			children = (
 				14547E7F28E0658C0030E9E6 /* MoviesView.swift */,
 				14547E8128E065C00030E9E6 /* MovieCell.swift */,
+				14547E9728E06C330030E9E6 /* MovieDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,8 +316,44 @@
 		14547E7728E061550030E9E6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				14547E9328E06BC60030E9E6 /* MoviesController.swift */,
+				14547E9528E06BF50030E9E6 /* MovieDetailsController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		14547E8928E06A440030E9E6 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				14547E8A28E06A570030E9E6 /* IMoviesRemoteDatasource.swift */,
+				14547E8C28E06A7E0030E9E6 /* MoviesRemoteDatasourceImpl.swift */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		14547E9028E06AF40030E9E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				14547E8E28E06AE10030E9E6 /* IMoviesViewModel.swift */,
+				14547E9128E06B090030E9E6 /* MoviesViewModelImpl.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14547E9B28E06F4A0030E9E6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				14F7ADAC28DEF85C00CDAB65 /* BaseView.swift */,
+				14F7ADAE28DEF88000CDAB65 /* StackView.swift */,
+				14F7ADB028DEF8C400CDAB65 /* BaseCollectionViewCell.swift */,
+				14F7ADB228DEF8E400CDAB65 /* BaseTableViewCell.swift */,
+				14F7ADB428DEF92300CDAB65 /* AppButton.swift */,
+				14F7ADB628DEF9D900CDAB65 /* ConfirmationDialogController.swift */,
+				14F7ADC528DEFE5300CDAB65 /* AppTextField.swift */,
+				14F7ADDB28DF083700CDAB65 /* BaseScrollView.swift */,
+				14547E9928E06E610030E9E6 /* AppCollectionView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		14F6947F28DF56A3005C75F4 /* Utils */ = {
@@ -353,6 +416,7 @@
 		14F7AD8C28DEEAE600CDAB65 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				14547E8928E06A440030E9E6 /* Movies */,
 				14F7AD9D28DEF24B00CDAB65 /* Path */,
 				14F7AD9A28DEF23900CDAB65 /* Base */,
 			);
@@ -362,6 +426,7 @@
 		14F7AD9728DEF20000CDAB65 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				14547E9B28E06F4A0030E9E6 /* Components */,
 				14F7ADBC28DEFD0400CDAB65 /* Input Validation */,
 				14F7AD9828DEF21600CDAB65 /* Utils.swift */,
 				14F7AD9E28DEF32200CDAB65 /* Toast.swift */,
@@ -371,17 +436,9 @@
 				14F7ADA628DEF46B00CDAB65 /* UIFont+Utils.swift */,
 				14F7ADA828DEF4D700CDAB65 /* Constants.swift */,
 				14F7ADAA28DEF7A500CDAB65 /* Bundle+Utils.swift */,
-				14F7ADAC28DEF85C00CDAB65 /* BaseView.swift */,
-				14F7ADAE28DEF88000CDAB65 /* StackView.swift */,
-				14F7ADB028DEF8C400CDAB65 /* BaseCollectionViewCell.swift */,
-				14F7ADB228DEF8E400CDAB65 /* BaseTableViewCell.swift */,
-				14F7ADB428DEF92300CDAB65 /* AppButton.swift */,
-				14F7ADB628DEF9D900CDAB65 /* ConfirmationDialogController.swift */,
 				14F7ADB828DEFAA500CDAB65 /* UIViewController+Utils.swift */,
 				14F7ADBA28DEFB5500CDAB65 /* InlineFuncs.swift */,
-				14F7ADC528DEFE5300CDAB65 /* AppTextField.swift */,
 				14F7ADCB28DF019F00CDAB65 /* AlertMessage.swift */,
-				14F7ADDB28DF083700CDAB65 /* BaseScrollView.swift */,
 				14F7ADE928DF29C600CDAB65 /* UIImage+Utils.swift */,
 			);
 			path = Utilities;
@@ -753,8 +810,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F7ADBE28DEFD1A00CDAB65 /* ValidationType.swift in Sources */,
+				14547E8F28E06AE10030E9E6 /* IMoviesViewModel.swift in Sources */,
 				14F7ADD828DF07FB00CDAB65 /* AuthCoordinatorDelegate.swift in Sources */,
+				14547E9428E06BC60030E9E6 /* MoviesController.swift in Sources */,
+				14547E8D28E06A7E0030E9E6 /* MoviesRemoteDatasourceImpl.swift in Sources */,
+				14547E8828E068A10030E9E6 /* Movie.swift in Sources */,
 				14F7AD9F28DEF32200CDAB65 /* Toast.swift in Sources */,
+				14547E8428E067490030E9E6 /* MovieDetail.swift in Sources */,
 				14F7ADCC28DF019F00CDAB65 /* AlertMessage.swift in Sources */,
 				14F7AD9428DEEB6700CDAB65 /* PreferenceKey.swift in Sources */,
 				14F7ADA728DEF46B00CDAB65 /* UIFont+Utils.swift in Sources */,
@@ -762,6 +824,7 @@
 				14F7ADBB28DEFB5500CDAB65 /* InlineFuncs.swift in Sources */,
 				14F7AD8628DEE83D00CDAB65 /* Coordinator.swift in Sources */,
 				14F7ADC028DEFD5100CDAB65 /* ValidationMessage.swift in Sources */,
+				14547E9828E06C330030E9E6 /* MovieDetailsView.swift in Sources */,
 				14547E6E28E05A530030E9E6 /* ILocalDatasource.swift in Sources */,
 				14F7ADC228DEFD6800CDAB65 /* IInputValidator.swift in Sources */,
 				14F7ADAB28DEF7A500CDAB65 /* Bundle+Utils.swift in Sources */,
@@ -774,10 +837,13 @@
 				14F7ADA128DEF35E00CDAB65 /* AutoLayout+Utils.swift in Sources */,
 				14F7ADAD28DEF85C00CDAB65 /* BaseView.swift in Sources */,
 				14547E7228E05AF10030E9E6 /* User.swift in Sources */,
+				14547E8B28E06A570030E9E6 /* IMoviesRemoteDatasource.swift in Sources */,
 				14F7ADAF28DEF88000CDAB65 /* StackView.swift in Sources */,
+				14547E9628E06BF50030E9E6 /* MovieDetailsController.swift in Sources */,
 				14F7AD8828DEE87900CDAB65 /* AppCoordinator.swift in Sources */,
 				14F7ADD628DF07C900CDAB65 /* Realm+Rx+Utils.swift in Sources */,
 				14F7ADDA28DF080C00CDAB65 /* AuthCoordinator.swift in Sources */,
+				14547E8628E068480030E9E6 /* Rating.swift in Sources */,
 				14F7AD9028DEEB0F00CDAB65 /* PreferenceImpl.swift in Sources */,
 				14F7ADA528DEF44500CDAB65 /* UIColor+Utils.swift in Sources */,
 				14F7ADA328DEF3C000CDAB65 /* UIView+Utils.swift in Sources */,
@@ -799,6 +865,8 @@
 				14F7ADC428DEFDC300CDAB65 /* InputValidatorImpl.swift in Sources */,
 				14F7ADEA28DF29C700CDAB65 /* UIImage+Utils.swift in Sources */,
 				14F7AD8E28DEEAFC00CDAB65 /* IPreference.swift in Sources */,
+				14547E9A28E06E610030E9E6 /* AppCollectionView.swift in Sources */,
+				14547E9228E06B090030E9E6 /* MoviesViewModelImpl.swift in Sources */,
 				14F7ADB328DEF8E400CDAB65 /* BaseTableViewCell.swift in Sources */,
 				14F7ADB928DEFAA500CDAB65 /* UIViewController+Utils.swift in Sources */,
 				14F7ADDC28DF083700CDAB65 /* BaseScrollView.swift in Sources */,

@@ -18,6 +18,13 @@ final class MovieCell: BaseCollectionViewCell {
     
     override func setup() {
         super.setup()
+        with(posterImageView) {
+            _addSubview($0)
+            $0.fillSuperview()
+        }
     }
     
+    func configure(movie: Movie) {
+        posterImageView.setImageFromURL(url: movie.poster, placeholderImage: .moviePlaceholderIcon.withTintColor(.tertiaryLabel))
+    }
 }

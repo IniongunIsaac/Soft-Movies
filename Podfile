@@ -15,7 +15,6 @@ def utilityPods
   pod 'IQKeyboardManagerSwift'
   pod 'HorizontalProgressBar'
   pod 'DZNEmptyDataSet'
-  pod 'RxDataSources', '~> 4.0'
 end
 
 target 'Soft Movies' do

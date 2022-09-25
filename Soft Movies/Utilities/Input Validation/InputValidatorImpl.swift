@@ -39,7 +39,7 @@ final class InputValidatorImpl: IInputValidator {
         if password.isEmpty {
             return ValidationMessage(message: "Cannot be empty", validationType: .password)
         } else if password.count < 6 {
-            return ValidationMessage(message: "Minimum 8 characters", validationType: .password)
+            return ValidationMessage(message: "Minimum 6 characters", validationType: .password)
         }
         
         return ValidationMessage(isValid: true, message: "", validationType: .password)

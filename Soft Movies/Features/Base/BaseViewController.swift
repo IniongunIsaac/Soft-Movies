@@ -35,7 +35,7 @@ class BaseViewController<VW: UIView, VM: Any>: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundColor = .aSystemBackground
+        backgroundColor = .systemBackground
         addSubview(kview)
         addSubviewConstraints()
         setObservers()

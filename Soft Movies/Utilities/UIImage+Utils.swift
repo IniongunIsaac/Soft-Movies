@@ -14,4 +14,11 @@ extension UIImage {
     static var eyeOpenIcon: UIImage { UIImage(named: "eye_open_icon") ?? UIImage() }
     
     static var eyeClosedIcon: UIImage { UIImage(named: "eye_closed_icon") ?? UIImage() }
+    
+    static var emptyIcon: UIImage { UIImage(named: "empty_icon") ?? UIImage() }
+    
+    static var profileIcon: UIImage { UIImage(named: "profile_icon") ?? UIImage() }
+    
+    static var moviePlaceholderIcon: UIImage { UIImage(named: "movie_placeholder_icon") ?? UIImage() }
 }
+

@@ -62,3 +62,13 @@ func runAfter(_ delay: Double = 0.5, action: @escaping () -> Void) {
         action()
     }
 }
+
+extension Optional where Wrapped == String {
+    var orEmpty: String {
+        return self?.isEmpty ?? true ? "" : self!
+    }
+    
+    var orNA: String {
+        return self?.isEmpty ?? true ? "N/A" : self!
+    }
+}
